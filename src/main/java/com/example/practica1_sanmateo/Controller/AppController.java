@@ -1,24 +1,45 @@
 package com.example.practica1_sanmateo.Controller;
 
-import com.example.practica1_sanmateo.DAO.CitasDAO;
+import com.example.practica1_sanmateo.DAO.CitaDAO;
+import com.example.practica1_sanmateo.DAO.PacienteDAO;
+import com.example.practica1_sanmateo.domain.Paciente;
 import com.example.practica1_sanmateo.util.AlertUtils;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AppController implements Initializable {
-    private CitasDAO citasDAO;
+    private int idPacienteLogueado;
+    private CitaDAO citasDAO;
+    private PacienteDAO pacienteDAO;
+
+    @FXML
+    private TextField tfDNI;
+
+    @FXML
+    private TextField tfNumeroCita;
+
+    @FXML
+    private TextField tfNombrePaciente;
+
+    @FXML
+    private TextField tfDireccionPaciente;
+
+    @FXML
+    private TextField tfTelefono;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        citasDAO = new CitasDAO();
+        pacienteDAO = new PacienteDAO();
+        citasDAO = new CitaDAO();
         try {
             citasDAO.conectar();
-            cargarDatos();
+            pacienteDAO.conectar();
         } catch (SQLException sqle) {
             AlertUtils.mostrarError("Error al conectar con la base de datos");
         } catch (ClassNotFoundException cnfe) {
@@ -28,21 +49,18 @@ public class AppController implements Initializable {
         }
     }
 
-    public void cargarDatos() {
-        /*
-        modoEdicion(false);
+    public void setDatosPaciente(Paciente paciente) {
+        this.idPacienteLogueado = paciente.getIdPaciente();
 
-        lvCoches.getItems().clear();
-        try {
-            List<Coche> coches = cocheDAO.obtenerCoches();
-            lvCoches.setItems(FXCollections.observableList(coches));
+        tfDNI.setText(paciente.getDni());
+        tfNombrePaciente.setText(paciente.getNombre());
+        tfDireccionPaciente.setText(paciente.getDireccion());
+        tfTelefono.setText(paciente.getTelefono());
 
-            String[] tipos = new String[]{"<Selecciona tipo>", "Familiar", "Monovolumen", "Deportivo", "SUV"};
-            cbTipo.setItems(FXCollections.observableArrayList(tipos));
-        } catch (SQLException sqle) {
-            AlertUtils.mostrarError("Error cargando los datos de la aplicación");
-        }
+        tfDNI.setEditable(false);
+        tfNombrePaciente.setEditable(false);
+        tfDireccionPaciente.setEditable(false);
+        tfTelefono.setEditable(false);
 
-        */
     }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #E6A8E6, #A8D8F0);;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practica1_sanmateo.Controller.LoginController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="1.0" layoutY="-4.0" prefHeight="406.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="lbIcon" prefHeight="138.0" prefWidth="48.0" text="👤">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbUserLogin" prefHeight="58.0" prefWidth="170.0" text="User Login" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfEmail" prefHeight="25.0" prefWidth="300.0" promptText="Email ID" />
+            <PasswordField fx:id="pfPassword" prefWidth="300.0" promptText="Password" />
+            <Button fx:id="btLogin" onAction="#manejarLogin" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" style="-fx-background-color: #2C3E50;; -fx-text-fill: white;; -fx-font-weight: bold;; -fx-background-radius: 0;;" text="LOGIN" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

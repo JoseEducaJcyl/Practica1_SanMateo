@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.practica1_sanmateo.Controller.AppController">
+   <children>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#d5dbe1" height="46.0" layoutX="25.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="547.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#d5dbe1" height="154.0" layoutX="27.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" width="547.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#d5dbe1" height="52.0" layoutX="27.0" layoutY="263.0" stroke="BLACK" strokeType="INSIDE" width="547.0" />
+      <Label fx:id="lbNumeroCita" layoutX="40.0" layoutY="31.0" text="Numero de Cita">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbFechaCita" layoutX="291.0" layoutY="31.0" text="Fecha Cita">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dtFechaCita" layoutX="386.0" layoutY="32.0" />
+      <TextField fx:id="tfNumeroCita" layoutX="186.0" layoutY="32.0" prefHeight="25.0" prefWidth="88.0" />
+      <TextField fx:id="tfDNI" layoutX="84.0" layoutY="95.0" />
+      <Label fx:id="lbDNI" layoutX="40.0" layoutY="94.0" text="DNI">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbNombrePaciente" layoutX="40.0" layoutY="122.0" prefHeight="19.0" prefWidth="149.0" text="Nombre Paciente">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbDireccionPaciente" layoutX="40.0" layoutY="161.0" prefHeight="27.0" prefWidth="88.0" text="Direccion">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbTelefono" layoutX="40.0" layoutY="199.0" prefHeight="27.0" prefWidth="88.0" text="Telefono">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfNombrePaciente" layoutX="200.0" layoutY="123.0" prefHeight="25.0" prefWidth="359.0" />
+      <TextField fx:id="tfDireccionPaciente" layoutX="200.0" layoutY="163.0" prefHeight="25.0" prefWidth="359.0" />
+      <TextField fx:id="tfTelefono" layoutX="200.0" layoutY="200.0" prefHeight="25.0" prefWidth="112.0" />
+      <Label fx:id="lbEspecialidad" layoutX="51.0" layoutY="276.0" prefHeight="27.0" prefWidth="112.0" text="Especialidad">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbCitasPaciente" layoutX="222.0" layoutY="325.0" prefHeight="27.0" prefWidth="158.0" text="Citas del Paciente" textFill="RED">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvCitasPaciente" editable="true" layoutX="100.0" layoutY="352.0" prefHeight="114.0" prefWidth="385.0">
+        <columns>
+          <TableColumn prefWidth="115.0" text="Nº Cita" />
+          <TableColumn prefWidth="167.0" text="Fecha" />
+            <TableColumn prefWidth="102.0" text="Especialidad" />
+        </columns>
+      </TableView>
+      <Button fx:id="btVerCitas" layoutX="425.0" layoutY="92.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Ver citas Paciente"
+              style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-color: #d3d3d3; -fx-border-color: #808080;"/>
+      <Button fx:id="btNuevaCita" layoutX="40.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Nueva Cita"
+              style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-color: #d3d3d3; -fx-border-color: #808080;"/>
+      <Button fx:id="btBorrarCita" layoutX="245.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Borrar Cita"
+              style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-color: #d3d3d3; -fx-border-color: #808080;"/>
+      <Button fx:id="btModificarCita" layoutX="448.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Modificar Cita"
+              style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-color: #d3d3d3; -fx-border-color: #808080;"/>
+      <ComboBox fx:id="cbEspecialidad" layoutX="311.0" layoutY="277.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

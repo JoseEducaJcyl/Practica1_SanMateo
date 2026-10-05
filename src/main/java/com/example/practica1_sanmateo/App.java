@@ -13,9 +13,9 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(R.getUI("hello-view.fxml"));
+        loader.setLocation(R.getUI("Login.fxml"));
         Scene scene = new Scene(loader.load(), 600, 590);
-        stage.setTitle("Gestión Hospitalaria");
+        stage.setTitle("Gestión Citas / Login");
         stage.setScene(scene);
         stage.show();
     }
