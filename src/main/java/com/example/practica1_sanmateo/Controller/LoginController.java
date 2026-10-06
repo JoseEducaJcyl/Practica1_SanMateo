@@ -3,6 +3,7 @@ package com.example.practica1_sanmateo.Controller;
 import com.example.practica1_sanmateo.App;
 import com.example.practica1_sanmateo.DAO.CitaDAO;
 import com.example.practica1_sanmateo.DAO.PacienteDAO;
+import com.example.practica1_sanmateo.domain.Cita;
 import com.example.practica1_sanmateo.domain.Paciente;
 import com.example.practica1_sanmateo.util.AlertUtils;
 import javafx.collections.FXCollections;

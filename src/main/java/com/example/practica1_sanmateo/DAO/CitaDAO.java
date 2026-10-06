@@ -35,7 +35,7 @@ public class CitaDAO {
 
     public List<Cita> obtenerCitas(int idPaciente) throws SQLException {
         List<Cita> citas = new ArrayList<>();
-        String sql = "SELECT idCita, nombreEspecialidad, fecha FROM Citas WHERE idPaciente = ?";
+        String sql = "SELECT idCita, nombreEspecialidad, fecha, idPaciente FROM Citas WHERE idPaciente = ?";
 
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setInt(1, idPaciente);
