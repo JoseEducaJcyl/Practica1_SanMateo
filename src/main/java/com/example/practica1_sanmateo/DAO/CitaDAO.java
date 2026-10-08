@@ -52,7 +52,7 @@ public class CitaDAO {
         return citas;
     }
 
-    public void guardarCita(Cita cita) throws SQLException {
+    public void nuevaCita(Cita cita) throws SQLException {
         String sql = "INSERT INTO Citas (nombreEspecialidad, fecha, idPaciente) VALUES (?, ?, ?)";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setString(1, cita.getNombreEspecialidad());
