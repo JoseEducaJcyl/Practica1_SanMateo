@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,6 +20,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.sql.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class AppController implements Initializable {
@@ -53,6 +55,9 @@ public class AppController implements Initializable {
     @FXML
     private TableColumn<Cita, String> especialidad;
 
+    @FXML
+    private ComboBox<String> cbEspecialidad;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         pacienteDAO = new PacienteDAO();
@@ -71,6 +76,19 @@ public class AppController implements Initializable {
         numCita.setCellValueFactory(new PropertyValueFactory<Cita, Integer>("idCita"));
         fecha.setCellValueFactory(new PropertyValueFactory<Cita, Date>("fecha"));
         especialidad.setCellValueFactory(new PropertyValueFactory<Cita, String>("nombreEspecialidad"));
+
+        cbEspecialidad.getItems().addAll(
+                "Medicina general",
+                "Pediatría",
+                "Traumatología",
+                "Dermatología",
+                "Cardiología",
+                "Endocrinología",
+                "Neurologia",
+                "Oftalmología",
+                "Urología",
+                "Ginecologá"
+        );
     }
 
     public void setDatosPaciente(Paciente paciente) {
